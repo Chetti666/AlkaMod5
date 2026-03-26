@@ -1,41 +1,35 @@
-# AlkaWallet - Billetera Digital
+# AlkaWallet - Billetera Digital (Android)
 
-Este proyecto es una simulación básica de una billetera digital denominada **AlkaWallet**, desarrollada en Java SE siguiendo el patrón de diseño **MVC (Modelo-Vista-Controlador)**. Permite a los usuarios gestionar sus fondos mediante depósitos, retiros y consulta de saldo a través de una interfaz de consola.
+Este proyecto es la versión móvil de la billetera digital **AlkaWallet**, desarrollada para la plataforma **Android** utilizando el lenguaje **Kotlin** y siguiendo el patrón de diseño **MVC (Modelo-Vista-Controlador)**.
 
 ## Requerimientos
-*   **Java JDK 8** o superior.
-*   **Apache Maven** (opcional, para construcción desde terminal).
-*   Un IDE de Java (IntelliJ IDEA, Eclipse, VS Code).
+*   **Android Studio** (versión reciente recomendada).
+*   **JDK 11** o superior.
+*   Un dispositivo físico Android o un Emulador (AVD).
 
 ## Estructura del Proyecto (MVC)
-*   **Modelo (`com.alkawallet.model.Wallet`)**: Contiene la lógica del saldo y las operaciones matemáticas.
-*   **Vista (`com.alkawallet.view.WalletView`)**: Maneja toda la interacción con el usuario (entrada y salida por consola).
-*   **Controlador (`com.alkawallet.controller.WalletController`)**: Orquesta la comunicación entre el Modelo y la Vista.
-*   **Main (`com.alkawallet.Main`)**: Punto de entrada de la aplicación.
-
-## Instrucciones de Ejecución
-
-### Opción 1: Desde el IDE (Recomendado)
-1.  Abre el proyecto en tu IDE preferido.
-2.  Navega hasta la carpeta `src/main/java/com/alkawallet/`.
-3.  Haz clic derecho sobre el archivo **`Main.java`**.
-4.  Selecciona **Run 'Main.main()'**.
-5.  Interactúa con la aplicación a través de la pestaña **Terminal** o **Console** del IDE.
-
-### Opción 2: Desde la Terminal (Maven)
-Si tienes Maven instalado, puedes compilar y ejecutar el proyecto con los siguientes comandos:
-
-1.  Compilar el proyecto:
-    ```bash
-    mvn clean package
-    ```
-2.  Ejecutar el archivo JAR generado:
-    ```bash
-    java -jar target/AlkaWallet-1.0-SNAPSHOT.jar
-    ```
+*   **Modelo (`com.alkawallet.model.Wallet`)**: Clase en Kotlin que gestiona el estado del saldo y las reglas de negocio para depósitos y retiros.
+*   **Vista (`res/layout/activity_main.xml`)**: Interfaz de usuario declarativa en XML que define la disposición de los elementos visuales (botones, textos y campos de entrada).
+*   **Controlador (`com.alkawallet.MainActivity`)**: Actividad que actúa como puente, capturando eventos de la interfaz, interactuando con el modelo y actualizando la UI con los resultados.
 
 ## Funcionalidades
-*   **Consulta de Saldo**: Visualiza el saldo disponible en tiempo real.
-*   **Depósitos**: Incrementa el saldo de la billetera.
-*   **Retiros**: Descuenta fondos validando que existan montos suficientes.
-*   **Validaciones**: El sistema impide ingresos de texto en campos numéricos y retiros superiores al saldo disponible.
+*   **Visualización de Saldo**: El saldo se actualiza automáticamente en la pantalla principal con formato de moneda.
+*   **Depósitos**: Permite ingresar montos para aumentar el saldo disponible.
+*   **Retiros**: Permite descontar montos del saldo.
+*   **Validaciones**: 
+    *   Evita el procesamiento de campos vacíos o montos inválidos.
+    *   Verifica que existan fondos suficientes antes de permitir un retiro.
+    *   Proporciona retroalimentación inmediata al usuario mediante **Toasts** (notificaciones emergentes).
+
+## Instrucciones de Ejecución
+1.  Descarga o clona este repositorio.
+2.  Abre **Android Studio** y selecciona **"Open"**.
+3.  Busca la carpeta del proyecto y presiona **OK**.
+4.  Espera a que **Gradle** sincronice las dependencias del proyecto.
+5.  Conecta tu dispositivo Android o inicia un emulador.
+6.  Haz clic en el botón **Run** (ícono de "Play" verde) en la barra superior.
+
+## Tecnologías Utilizadas
+*   **Lenguaje**: Kotlin.
+*   **Android SDK**: Componentes de UI nativos y AppCompat.
+*   **Layout**: LinearLayout para una estructura limpia y funcional.
