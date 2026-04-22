@@ -1,35 +1,50 @@
-# AlkaWallet - Billetera Digital (Android)
+# Evaluación Integradora Módulo 5
+## Proyecto Alke Wallet 
 
-Este proyecto es la versión móvil de la billetera digital **AlkaWallet**, desarrollada para la plataforma **Android** utilizando el lenguaje **Kotlin** y siguiendo el patrón de diseño **MVC (Modelo-Vista-Controlador)**.
+**Evaluación integradora Módulo 6:** https://github.com/fabyDiaz/Modulo5--Arquitectura-y-ciclo-de-vida-de-componentes-Android/tree/version5 <br>
 
-## Requerimientos
-*   **Android Studio** (versión reciente recomendada).
-*   **JDK 11** o superior.
-*   Un dispositivo físico Android o un Emulador (AVD).
+**Situación inicial** 📍
 
-## Estructura del Proyecto (MVC)
-*   **Modelo (`com.alkawallet.model.Wallet`)**: Clase en Kotlin que gestiona el estado del saldo y las reglas de negocio para depósitos y retiros.
-*   **Vista (`res/layout/activity_main.xml`)**: Interfaz de usuario declarativa en XML que define la disposición de los elementos visuales (botones, textos y campos de entrada).
-*   **Controlador (`com.alkawallet.MainActivity`)**: Actividad que actúa como puente, capturando eventos de la interfaz, interactuando con el modelo y actualizando la UI con los resultados.
+Unidad solicitante: Equipo de desarrollo de una empresa fintech <br>
+📌El equipo de desarrollo ha recibido la solicitud de crear una wallet digital para la empresa Alkemy Digital. La problemática a resolver es brindar a los usuarios una solución segura y fácil de usar para administrar sus activos financieros de manera digital. La wallet permitirá a los usuarios realizar transacciones dentro de la plataforma. 
 
-## Funcionalidades
-*   **Visualización de Saldo**: El saldo se actualiza automáticamente en la pantalla principal con formato de moneda.
-*   **Depósitos**: Permite ingresar montos para aumentar el saldo disponible.
-*   **Retiros**: Permite descontar montos del saldo.
-*   **Validaciones**: 
-    *   Evita el procesamiento de campos vacíos o montos inválidos.
-    *   Verifica que existan fondos suficientes antes de permitir un retiro.
-    *   Proporciona retroalimentación inmediata al usuario mediante **Toasts** (notificaciones emergentes).
+**objetivo** 🎯<br>
 
-## Instrucciones de Ejecución
-1.  Descarga o clona este repositorio.
-2.  Abre **Android Studio** y selecciona **"Open"**.
-3.  Busca la carpeta del proyecto y presiona **OK**.
-4.  Espera a que **Gradle** sincronice las dependencias del proyecto.
-5.  Conecta tu dispositivo Android o inicia un emulador.
-6.  Haz clic en el botón **Run** (ícono de "Play" verde) en la barra superior.
+El objetivo de nuestro proyecto "Alke Wallet" es desarrollar una billetera digital que permita a los usuarios gestionar sus activos financieros de manera segura y conveniente. Nuestro objetivo es entregar una aplicación funcional, segura y fácil de usar que proporcione a los usuarios una solución confiable para administrar sus activos financieros de manera digital.
+ 
 
-## Tecnologías Utilizadas
-*   **Lenguaje**: Kotlin.
-*   **Android SDK**: Componentes de UI nativos y AppCompat.
-*   **Layout**: LinearLayout para una estructura limpia y funcional.
+ **Pantallas de la App** <br>
+ a. Splash Screen <br>
+b. Login / Signup Page <br>
+c. Login Page <br>
+d. Signup Page <br>
+e. Home Page <br>
+e. Profile Page <br>
+f. Send Money <br>
+g. Request Money <br><br>
+
+**Requerimientos** <br>
+
+ La wallet que realizarás deberá cumplir con una serie de características y
+ requerimientos técnicos para garantizar la calidad y funcionalidad de la
+ misma. <br>
+ Pra este proyecto se utiliza el patrón MVVM . Para esto como requerimiento general tenemos que poder implementar
+ todas el esqueleto y la lógica de comunicación entre view y view model. <br><br>
+ 
+
+ **Consideraciones**<br>
+- Aún no se establece comunicación con base de datos por lo que  se crea un dataSet con datos con datos de prueba para el funcionamiento de la app. <br>
+- A modo de prueba para logearse puede usar los siguientes datos: <br>
+email: amanda@gmail.com<br>
+contraseña: amanda123<br>
+- También puede crear un usuario nuevo el cuál tiene por defecto un saldo de $1000
+- Puede recibir o enviar dinero. 
+- Para enviar o recibir dinero puede seleccionar el destinatario. A modo de prueba tenemos un dataSet de destinatario fija que aparece tanto para usuarios logueado como usuarios nuevos
+
+**Imagenes de la App** <br>
+<img src="/RecursosReadme/loginsignuppage.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
+<img src="/RecursosReadme/loginpapge.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
+<img src="/RecursosReadme/homepage.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
+<img src="/RecursosReadme/Spinnerenviodinero.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
+<img src="/RecursosReadme/eviodinero.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
+<img src="/RecursosReadme/muesratransacciones.jpg" alt="Inicio de la app AlkeWallet" width="200"/>
